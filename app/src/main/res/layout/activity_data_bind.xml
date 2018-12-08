@@ -15,25 +15,47 @@
         android:onClick="@{user.onItemClick}"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <com.example.winnie.mvvm.CustomView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:content="@={user.name}" />
+
+        <com.example.winnie.mvvm.CustomView1
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:content="@={user.name}" />
+
+        <EditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@{`姓名：`+ user.username}" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <EditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@{`昵称：` + user.nickname}" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <EditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@{`年龄：` + String.valueOf(user.age)}" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={user.name}" />
+
+        <!--使用android:text="@={user.nickname}"可以实现数据的双向绑定-->
+        <!--系统自带的控件才可以这个玩-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={user.name}" />
 
         <ImageView
             android:id="@+id/iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:userFace="@{user.userface}"></ImageView>
+            app:userFace="@{user.userface}"/>
     </LinearLayout>
 </layout>
