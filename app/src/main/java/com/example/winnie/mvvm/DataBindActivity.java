@@ -31,7 +31,7 @@ public class DataBindActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 UserEntity user = dataBindBinding.getUser();
-                user.setUserface("LiuLi");
+                user.setNickname("LiuLi");
             }
         });
     }

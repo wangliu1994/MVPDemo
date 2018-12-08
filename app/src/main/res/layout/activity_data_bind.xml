@@ -45,6 +45,13 @@
             android:layout_height="wrap_content"
             android:text="@={user.name}" />
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(user.age)}" />
+        <!--双向绑定的时候不能使用String.valueOf-->
+        <!--android:text="@={String.valueOf(user.age)}"-->
+
         <!--使用android:text="@={user.nickname}"可以实现数据的双向绑定-->
         <!--系统自带的控件才可以这个玩-->
         <EditText
