@@ -20,7 +20,11 @@ public class UserEntity {
     private String nickname;
     private int age;
     private String userface;
-    public final ObservableField<String> name = new ObservableField<>();
+    /**
+     * 必须要get方法能拿到ObservableField<String> name才行  或者使用public
+     */
+    private final ObservableField<String> name = new ObservableField<>();
+    public final ObservableField<String> name1 = new ObservableField<>();
 
     public String getUsername() {
         return username;
@@ -40,6 +44,7 @@ public class UserEntity {
         }
         this.nickname = nickname;
         name.set(nickname);
+        name1.set(nickname);
     }
 
     public int getAge() {
@@ -66,5 +71,13 @@ public class UserEntity {
 
     public void onItemClick(View view){
         Log.d("tag", "onItemClick");
+    }
+
+    public String getName(){
+        return name.get();
+    }
+
+    public void setName(String name){
+        this.name.set(name);
     }
 }
